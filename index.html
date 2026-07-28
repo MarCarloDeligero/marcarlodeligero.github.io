@@ -1,156 +1,137 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Mar Carlo B. Deligero — Fullstack Developer</title>
-    <meta
-      name="description"
-      content="Mar Carlo B. Deligero — Fullstack Developer working with PHP Laravel, Tailwind CSS, HTML &amp; JavaScript."
-    />
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mar Carlo B. Deligero — Fullstack Developer</title>
+<meta name="description" content="Mar Carlo B. Deligero — Fullstack Developer working with PHP Laravel, Tailwind CSS, HTML &amp; JavaScript.">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
 
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
-    <!-- BOOT OVERLAY -->
-    <div class="boot" id="boot">
-      <div class="boot__inner">
-        <p class="boot__line">
-          <span class="boot__prompt">guest@portfolio</span
-          ><span class="boot__sep">:~$</span> <span id="bootType"></span
-          ><span class="cursor">▌</span>
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="Mar Carlo B. Deligero — Fullstack Developer">
+<meta property="og:description" content="PHP Laravel backend, Tailwind CSS &amp; JavaScript frontend. View my work and get in touch.">
+<meta property="og:image" content="images/mar-carlo.jpg">
+<meta property="og:url" content="https://marcarlo.dev">
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Mar Carlo B. Deligero — Fullstack Developer">
+<meta name="twitter:description" content="PHP Laravel backend, Tailwind CSS &amp; JavaScript frontend.">
+<meta name="twitter:image" content="images/mar-carlo.jpg">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- BOOT OVERLAY -->
+<div class="boot" id="boot">
+  <div class="boot__inner">
+    <p class="boot__line"><span class="boot__prompt">guest@portfolio</span><span class="boot__sep">:~$</span> <span id="bootType"></span><span class="cursor">▌</span></p>
+    <div class="boot__bar"><div class="boot__bar-fill" id="bootFill"></div></div>
+  </div>
+</div>
+
+<div class="grain"></div>
+
+<!-- NAV -->
+<header class="nav" id="nav">
+  <a href="#top" class="nav__logo">mar_carlo<span class="dot">.</span>dev</a>
+  <nav class="nav__links">
+    <a href="#about"><span class="mono muted">01</span> About</a>
+    <a href="#stack"><span class="mono muted">02</span> Stack</a>
+    <a href="#work"><span class="mono muted">03</span> Work</a>
+    <a href="#experience"><span class="mono muted">04</span> Log</a>
+    <a href="#contact"><span class="mono muted">05</span> Contact</a>
+  </nav>
+  <a href="#contact" class="nav__cta">Say hello →</a>
+  <button class="nav__burger" id="burger" aria-label="Open menu" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+</header>
+
+<div class="nav__mobile" id="navMobile">
+  <a href="#about">01 · About</a>
+  <a href="#stack">02 · Stack</a>
+  <a href="#work">03 · Work</a>
+  <a href="#experience">04 · Log</a>
+  <a href="#contact">05 · Contact</a>
+</div>
+
+<main id="top">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero__grid">
+      <div class="hero__copy reveal">
+        <p class="eyebrow mono">$ php artisan portfolio:show <span class="accent-amber">--dev=mar-carlo</span></p>
+        <h1 class="hero__title">
+          Mar Carlo<br>
+          B. Deligero
+        </h1>
+        <p class="hero__role">
+          Fullstack Developer building on
+          <span class="tag tag--maroon">Laravel</span>
+          <span class="tag tag--amber">Tailwind CSS</span>
+          from the backend up.
         </p>
-        <div class="boot__bar">
-          <div class="boot__bar-fill" id="bootFill"></div>
+        <p class="hero__desc">
+          I write the PHP that runs the server, and the HTML, CSS &amp; JS that
+          make it worth visiting. Comfortable moving between Eloquent models,
+          Blade views and hand-tuned utility classes without losing the thread.
+        </p>
+        <div class="hero__actions">
+          <a href="#work" class="btn btn--primary">View work</a>
+          <a href="#contact" class="btn btn--ghost">Let's talk</a>
+          <a href="resume.pdf" class="btn btn--ghost" download>Download résumé</a>
+        </div>
+        <div class="hero__status">
+          <span class="status-dot"></span>
+          <span class="mono">STATUS</span> — Available for freelance &amp; fullstack roles
         </div>
       </div>
+
+      <div class="hero__photo reveal reveal--delay">
+        <div class="photo-card">
+          <img src="images/mar-carlo.jpg" alt="Mar Carlo B. Deligero standing on a city street" class="photo-card__img">
+          <span class="photo-card__pin"></span>
+          <span class="photo-card__tag mono">// currently: Northern Mindanao, PH</span>
+        </div>
+        <p class="photo-caption mono">Route::get('/', <span class="accent-amber">fn</span> () =&gt; view('mar-carlo'));</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="about" id="about">
+    <div class="section-head reveal">
+      <span class="eyebrow mono">01 / about</span>
+      <h2>composer.json</h2>
     </div>
 
-    <div class="grain"></div>
+    <div class="about__grid">
+      <div class="about__text reveal">
+        <p>
+          I'm Mar Carlo — a fullstack developer who thinks in requests and responses
+          as much as in components and classes. My backend of choice is
+          <strong>PHP with Laravel</strong>: migrations, Eloquent relationships,
+          queued jobs, and clean route files that read like a map of the product.
+        </p>
+        <p>
+          On the frontend I keep it lean — <strong>plain HTML &amp; CSS</strong>
+          where it's enough, <strong>Tailwind CSS</strong> when a project needs to
+          move fast without a design system slowing it down, and
+          <strong>JavaScript</strong> to make the interface behave. I like
+          shipping features end to end: schema, endpoint, and the pixel that
+          triggers it.
+        </p>
+      </div>
 
-    <!-- NAV -->
-    <header class="nav" id="nav">
-      <a href="#top" class="nav__logo"
-        >mar_carlo<span class="dot">.</span>dev</a
-      >
-      <nav class="nav__links">
-        <a href="#about"><span class="mono muted">01</span> About</a>
-        <a href="#stack"><span class="mono muted">02</span> Stack</a>
-        <a href="#work"><span class="mono muted">03</span> Work</a>
-        <a href="#experience"><span class="mono muted">04</span> Log</a>
-        <a href="#contact"><span class="mono muted">05</span> Contact</a>
-      </nav>
-      <a href="#contact" class="nav__cta">Say hello →</a>
-      <button
-        class="nav__burger"
-        id="burger"
-        aria-label="Open menu"
-        aria-expanded="false"
-      >
-        <span></span><span></span><span></span>
-      </button>
-    </header>
-
-    <div class="nav__mobile" id="navMobile">
-      <a href="#about">01 · About</a>
-      <a href="#stack">02 · Stack</a>
-      <a href="#work">03 · Work</a>
-      <a href="#experience">04 · Log</a>
-      <a href="#contact">05 · Contact</a>
-    </div>
-
-    <main id="top">
-      <!-- HERO -->
-      <section class="hero">
-        <div class="hero__grid">
-          <div class="hero__copy reveal">
-            <p class="eyebrow mono">
-              $ php artisan portfolio:show
-              <span class="accent-amber">--dev=mar-carlo</span>
-            </p>
-            <h1 class="hero__title">
-              Mar Carlo<br />
-              B. Deligero
-            </h1>
-            <p class="hero__role">
-              Fullstack Developer building on
-              <span class="tag tag--maroon">Laravel</span>
-              <span class="tag tag--amber">Tailwind CSS</span>
-              from the backend up.
-            </p>
-            <p class="hero__desc">
-              I write the PHP that runs the server, and the HTML, CSS &amp; JS
-              that make it worth visiting. Comfortable moving between Eloquent
-              models, Blade views and hand-tuned utility classes without losing
-              the thread.
-            </p>
-            <div class="hero__actions">
-              <a href="#work" class="btn btn--primary">View work</a>
-              <a href="#contact" class="btn btn--ghost">Let's talk</a>
-            </div>
-            <div class="hero__status">
-              <span class="status-dot"></span>
-              <span class="mono">STATUS</span> — Available for freelance &amp;
-              fullstack roles
-            </div>
-          </div>
-
-          <div class="hero__photo reveal reveal--delay">
-            <div class="photo-card">
-              <img
-                src="images/mar-carlo.jpg"
-                alt="Mar Carlo B. Deligero standing on a city street"
-                class="photo-card__img"
-              />
-              <span class="photo-card__pin"></span>
-              <span class="photo-card__tag mono"
-                >// currently: Northern Mindanao, PH</span
-              >
-            </div>
-            <p class="photo-caption mono">
-              Route::get('/', <span class="accent-amber">fn</span> () =&gt;
-              view('mar-carlo'));
-            </p>
-          </div>
-        </div>
-      </section>
-
-      <!-- ABOUT -->
-      <section class="about" id="about">
-        <div class="section-head reveal">
-          <span class="eyebrow mono">01 / about</span>
-          <h2>composer.json</h2>
-        </div>
-
-        <div class="about__grid">
-          <div class="about__text reveal">
-            <p>
-              I'm Mar Carlo — a fullstack developer who thinks in requests and
-              responses as much as in components and classes. My backend of
-              choice is
-              <strong>PHP with Laravel</strong>: migrations, Eloquent
-              relationships, queued jobs, and clean route files that read like a
-              map of the product.
-            </p>
-            <p>
-              On the frontend I keep it lean —
-              <strong>plain HTML &amp; CSS</strong> where it's enough,
-              <strong>Tailwind CSS</strong> when a project needs to move fast
-              without a design system slowing it down, and
-              <strong>JavaScript</strong> to make the interface behave. I like
-              shipping features end to end: schema, endpoint, and the pixel that
-              triggers it.
-            </p>
-          </div>
-
-          <div class="about__json reveal reveal--delay">
-            <pre class="code-block mono"><code><span class="code-punct">{</span>
+      <div class="about__json reveal reveal--delay">
+        <pre class="code-block mono"><code><span class="code-punct">{</span>
   <span class="code-key">"name"</span>: <span class="code-str">"mar-carlo/portfolio"</span>,
   <span class="code-key">"type"</span>: <span class="code-str">"developer"</span>,
   <span class="code-key">"role"</span>: <span class="code-str">"fullstack"</span>,
@@ -163,217 +144,188 @@
   <span class="code-key">"minimum-stability"</span>: <span class="code-str">"stable"</span>,
   <span class="code-key">"prefer-clean-code"</span>: <span class="code-kw">true</span>
 <span class="code-punct">}</span></code></pre>
-          </div>
-        </div>
-      </section>
+      </div>
+    </div>
+  </section>
 
-      <!-- STACK -->
-      <section class="stack" id="stack">
-        <div class="section-head reveal">
-          <span class="eyebrow mono">02 / stack</span>
-          <h2>Tools of the trade</h2>
-        </div>
+  <!-- STACK -->
+  <section class="stack" id="stack">
+    <div class="section-head reveal">
+      <span class="eyebrow mono">02 / stack</span>
+      <h2>Tools of the trade</h2>
+    </div>
 
-        <div class="stack__grid">
-          <div class="stack__col reveal">
-            <h3 class="mono stack__label">
-              <span class="accent-maroon">■</span> backend
-            </h3>
-            <ul class="stack__list">
-              <li>PHP</li>
-              <li>Laravel</li>
-              <li>Eloquent ORM</li>
-              <li>MySQL</li>
-              <li>REST APIs</li>
-              <li>Artisan CLI</li>
-            </ul>
-          </div>
-          <div class="stack__col reveal reveal--delay">
-            <h3 class="mono stack__label">
-              <span class="accent-amber">■</span> frontend
-            </h3>
-            <ul class="stack__list">
-              <li>HTML5</li>
-              <li>CSS3</li>
-              <li>Tailwind CSS</li>
-              <li>JavaScript</li>
-              <li>Blade Templates</li>
-              <li>Responsive UI</li>
-            </ul>
-          </div>
-          <div class="stack__col reveal reveal--delay2">
-            <h3 class="mono stack__label">
-              <span class="accent-line">■</span> tooling
-            </h3>
-            <ul class="stack__list">
-              <li>Git &amp; GitHub</li>
-              <li>Composer</li>
-              <li>Postman</li>
-              <li>VS Code</li>
-              <li>NPM / Vite</li>
-              <li>Linux CLI</li>
-            </ul>
-          </div>
-        </div>
-      </section>
+    <div class="stack__grid">
+      <div class="stack__col reveal">
+        <h3 class="mono stack__label"><span class="accent-maroon">■</span> backend</h3>
+        <ul class="stack__list">
+          <li>PHP</li>
+          <li>Laravel</li>
+          <li>Eloquent ORM</li>
+          <li>MySQL</li>
+          <li>REST APIs</li>
+          <li>Artisan CLI</li>
+        </ul>
+      </div>
+      <div class="stack__col reveal reveal--delay">
+        <h3 class="mono stack__label"><span class="accent-amber">■</span> frontend</h3>
+        <ul class="stack__list">
+          <li>HTML5</li>
+          <li>CSS3</li>
+          <li>Tailwind CSS</li>
+          <li>JavaScript</li>
+          <li>Blade Templates</li>
+          <li>Responsive UI</li>
+        </ul>
+      </div>
+      <div class="stack__col reveal reveal--delay2">
+        <h3 class="mono stack__label"><span class="accent-line">■</span> tooling</h3>
+        <ul class="stack__list">
+          <li>Git &amp; GitHub</li>
+          <li>Composer</li>
+          <li>Postman</li>
+          <li>VS Code</li>
+          <li>NPM / Vite</li>
+          <li>Linux CLI</li>
+        </ul>
+      </div>
+    </div>
+  </section>
 
-      <!-- WORK -->
-      <section class="work" id="work">
-        <div class="section-head reveal">
-          <span class="eyebrow mono">03 / work</span>
-          <h2>Selected routes</h2>
-        </div>
+  <!-- WORK -->
+  <section class="work" id="work">
+    <div class="section-head reveal">
+      <span class="eyebrow mono">03 / work</span>
+      <h2>Selected routes</h2>
+    </div>
 
-        <div class="work__grid">
-          <article class="project reveal">
-            <p class="project__route mono">
-              Route::get('/projects/<span class="accent-amber">01</span>')
-            </p>
-            <h3>Inventory &amp; Sales System</h3>
-            <p class="project__desc">
-              A Laravel-powered inventory manager with real-time stock tracking,
-              low-stock alerts, and a Tailwind dashboard for daily sales
-              reporting.
-            </p>
-            <div class="project__tags">
-              <span class="tag tag--maroon">Laravel</span>
-              <span class="tag tag--outline">MySQL</span>
-              <span class="tag tag--outline">Tailwind CSS</span>
-            </div>
-            <div class="project__links">
-              <a href="#" class="project__link">Live demo →</a>
-              <a href="#" class="project__link">Source →</a>
-            </div>
-          </article>
+    <div class="work__grid">
 
-          <article class="project reveal reveal--delay">
-            <p class="project__route mono">
-              Route::get('/projects/<span class="accent-amber">02</span>')
-            </p>
-            <h3>Client Booking Platform</h3>
-            <p class="project__desc">
-              An appointment booking app built on Laravel with Blade views, form
-              validation, and a JavaScript-driven calendar for scheduling slots.
-            </p>
-            <div class="project__tags">
-              <span class="tag tag--maroon">Laravel</span>
-              <span class="tag tag--outline">JavaScript</span>
-              <span class="tag tag--outline">Blade</span>
-            </div>
-            <div class="project__links">
-              <a href="#" class="project__link">Live demo →</a>
-              <a href="#" class="project__link">Source →</a>
-            </div>
-          </article>
-
-          <article class="project reveal reveal--delay2">
-            <p class="project__route mono">
-              Route::get('/projects/<span class="accent-amber">03</span>')
-            </p>
-            <h3>Portfolio API</h3>
-            <p class="project__desc">
-              A small REST API serving project &amp; blog content to a Tailwind
-              frontend — built to practice clean Laravel API resources and auth.
-            </p>
-            <div class="project__tags">
-              <span class="tag tag--maroon">Laravel</span>
-              <span class="tag tag--outline">REST API</span>
-              <span class="tag tag--outline">HTML/CSS</span>
-            </div>
-            <div class="project__links">
-              <a href="#" class="project__link">Live demo →</a>
-              <a href="#" class="project__link">Source →</a>
-            </div>
-          </article>
-        </div>
-        <p class="work__note mono muted">
-          // swap the links above with your real repos and live URLs
+      <article class="project reveal">
+        <p class="project__route mono">Route::get('/projects/<span class="accent-amber">01</span>')</p>
+        <h3>Inventory &amp; Sales System</h3>
+        <p class="project__desc">
+          A Laravel-powered inventory manager with real-time stock tracking,
+          low-stock alerts, and a Tailwind dashboard for daily sales reporting.
         </p>
-      </section>
-
-      <!-- EXPERIENCE / GIT LOG -->
-      <section class="experience" id="experience">
-        <div class="section-head reveal">
-          <span class="eyebrow mono">04 / log</span>
-          <h2>git log --oneline</h2>
+        <div class="project__tags">
+          <span class="tag tag--maroon">Laravel</span>
+          <span class="tag tag--outline">MySQL</span>
+          <span class="tag tag--outline">Tailwind CSS</span>
         </div>
-
-        <div class="gitlog reveal">
-          <div class="gitlog__row">
-            <span class="gitlog__hash mono">a3f9c1e</span>
-            <span class="gitlog__msg"
-              >Building fullstack apps with Laravel + Tailwind CSS</span
-            >
-            <span class="gitlog__date mono muted">present</span>
-          </div>
-          <div class="gitlog__row">
-            <span class="gitlog__hash mono">7b2e884</span>
-            <span class="gitlog__msg"
-              >Shipped first client project end-to-end (backend +
-              frontend)</span
-            >
-            <span class="gitlog__date mono muted">2024</span>
-          </div>
-          <div class="gitlog__row">
-            <span class="gitlog__hash mono">d19a0f2</span>
-            <span class="gitlog__msg"
-              >Learned Laravel, Eloquent &amp; RESTful API design</span
-            >
-            <span class="gitlog__date mono muted">2023</span>
-          </div>
-          <div class="gitlog__row">
-            <span class="gitlog__hash mono">4c6e701</span>
-            <span class="gitlog__msg"
-              >Started with core HTML, CSS &amp; JavaScript fundamentals</span
-            >
-            <span class="gitlog__date mono muted">2022</span>
-          </div>
+        <div class="project__links">
+          <a href="#" class="project__link">Live demo →</a>
+          <a href="#" class="project__link">Source →</a>
         </div>
-      </section>
+      </article>
 
-      <!-- CONTACT -->
-      <section class="contact" id="contact">
-        <div class="contact__grid">
-          <div class="contact__copy reveal">
-            <span class="eyebrow mono">05 / contact</span>
-            <h2>$ contact --send</h2>
-            <p>
-              Got a project that needs a Laravel backend and a frontend that
-              doesn't feel bolted on? I'm open to freelance work and fullstack
-              roles — email me directly.
-            </p>
-            <div class="contact__socials">
-              <a href="mailto:deligero.c@yahoo.com">Email</a>
-              <a href="#">GitHub</a>
-              <a href="#">LinkedIn</a>
-            </div>
-          </div>
-
-          <div class="contact__email-card reveal reveal--delay">
-            <p class="mono field__label">$ echo $CONTACT_EMAIL</p>
-            <a href="mailto:deligero.c@yahoo.com" class="contact__email"
-              >deligero.c@yahoo.com</a
-            >
-            <button
-              class="btn btn--ghost btn--full"
-              id="copyEmailBtn"
-              type="button"
-            >
-              <span id="copyEmailLabel">Copy email</span>
-            </button>
-            <p class="field__hint mono muted">
-              // reach out directly — no form, no middleman
-            </p>
-          </div>
+      <article class="project reveal reveal--delay">
+        <p class="project__route mono">Route::get('/projects/<span class="accent-amber">02</span>')</p>
+        <h3>Client Booking Platform</h3>
+        <p class="project__desc">
+          An appointment booking app built on Laravel with Blade views, form
+          validation, and a JavaScript-driven calendar for scheduling slots.
+        </p>
+        <div class="project__tags">
+          <span class="tag tag--maroon">Laravel</span>
+          <span class="tag tag--outline">JavaScript</span>
+          <span class="tag tag--outline">Blade</span>
         </div>
-      </section>
-    </main>
+        <div class="project__links">
+          <a href="#" class="project__link">Live demo →</a>
+          <a href="#" class="project__link">Source →</a>
+        </div>
+      </article>
 
-    <footer class="footer">
-      <p class="mono muted">© <span id="year"></span> Mar Carlo B. Deligero</p>
-      <a href="#top" class="footer__top mono">back to top ↑</a>
-    </footer>
+      <article class="project reveal reveal--delay2">
+        <p class="project__route mono">Route::get('/projects/<span class="accent-amber">03</span>')</p>
+        <h3>Portfolio API</h3>
+        <p class="project__desc">
+          A small REST API serving project &amp; blog content to a Tailwind
+          frontend — built to practice clean Laravel API resources and auth.
+        </p>
+        <div class="project__tags">
+          <span class="tag tag--maroon">Laravel</span>
+          <span class="tag tag--outline">REST API</span>
+          <span class="tag tag--outline">HTML/CSS</span>
+        </div>
+        <div class="project__links">
+          <a href="#" class="project__link">Live demo →</a>
+          <a href="#" class="project__link">Source →</a>
+        </div>
+      </article>
 
-    <script src="script.js"></script>
-  </body>
+    </div>
+    <p class="work__note mono muted">// swap the links above with your real repos and live URLs</p>
+  </section>
+
+  <!-- EXPERIENCE / GIT LOG -->
+  <section class="experience" id="experience">
+    <div class="section-head reveal">
+      <span class="eyebrow mono">04 / log</span>
+      <h2>git log --oneline</h2>
+    </div>
+
+    <div class="gitlog reveal">
+      <div class="gitlog__row">
+        <span class="gitlog__hash mono">a3f9c1e</span>
+        <span class="gitlog__msg">Building fullstack apps with Laravel + Tailwind CSS</span>
+        <span class="gitlog__date mono muted">present</span>
+      </div>
+      <div class="gitlog__row">
+        <span class="gitlog__hash mono">7b2e884</span>
+        <span class="gitlog__msg">Shipped first client project end-to-end (backend + frontend)</span>
+        <span class="gitlog__date mono muted">2024</span>
+      </div>
+      <div class="gitlog__row">
+        <span class="gitlog__hash mono">d19a0f2</span>
+        <span class="gitlog__msg">Learned Laravel, Eloquent &amp; RESTful API design</span>
+        <span class="gitlog__date mono muted">2023</span>
+      </div>
+      <div class="gitlog__row">
+        <span class="gitlog__hash mono">4c6e701</span>
+        <span class="gitlog__msg">Started with core HTML, CSS &amp; JavaScript fundamentals</span>
+        <span class="gitlog__date mono muted">2022</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="contact" id="contact">
+    <div class="contact__grid">
+      <div class="contact__copy reveal">
+        <span class="eyebrow mono">05 / contact</span>
+        <h2>$ contact --send</h2>
+        <p>
+          Got a project that needs a Laravel backend and a frontend that
+          doesn't feel bolted on? I'm open to freelance work and fullstack
+          roles — email me directly.
+        </p>
+        <div class="contact__socials">
+          <a href="mailto:deligero.c@yahoo.com">Email</a>
+          <a href="#">GitHub</a>
+          <a href="#">LinkedIn</a>
+        </div>
+      </div>
+
+      <div class="contact__email-card reveal reveal--delay">
+        <p class="mono field__label">$ echo $CONTACT_EMAIL</p>
+        <a href="mailto:deligero.c@yahoo.com" class="contact__email">deligero.c@yahoo.com</a>
+        <button class="btn btn--ghost btn--full" id="copyEmailBtn" type="button">
+          <span id="copyEmailLabel">Copy email</span>
+        </button>
+        <p class="field__hint mono muted">// reach out directly — no form, no middleman</p>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <p class="mono muted">© <span id="year"></span> Mar Carlo B. Deligero — built with HTML, CSS &amp; JS.</p>
+  <a href="#top" class="footer__top mono">back to top ↑</a>
+</footer>
+
+<script src="script.js"></script>
+</body>
 </html>
