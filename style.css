@@ -322,7 +322,17 @@ h2 {
   color: var(--text-muted);
   border-top: 1px solid var(--line);
   padding-top: 1.2rem;
+  margin-top: 1.6rem;
 }
+
+.resume-link {
+  display: inline-block;
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  border-bottom: 1px solid transparent;
+  transition: color 0.2s var(--ease), border-color 0.2s var(--ease);
+}
+.resume-link:hover { color: var(--amber); border-color: var(--amber); }
 .status-dot {
   width: 8px; height: 8px;
   border-radius: 50%;
@@ -519,10 +529,6 @@ h2 {
 .gitlog {
   max-width: var(--container);
   margin: 0 auto;
-  border: 1px solid var(--line);
-  border-radius: var(--radius);
-  overflow: hidden;
-  background: var(--surface);
 }
 
 .gitlog__row {
@@ -530,12 +536,12 @@ h2 {
   grid-template-columns: 110px 1fr 90px;
   gap: 1.2rem;
   align-items: center;
-  padding: 1.1rem 1.6rem;
+  padding: 1.1rem 0.4rem;
   border-bottom: 1px solid var(--line);
-  transition: background 0.2s var(--ease);
+  transition: background 0.2s var(--ease), padding-left 0.2s var(--ease);
 }
-.gitlog__row:last-child { border-bottom: none; }
-.gitlog__row:hover { background: var(--surface-2); }
+.gitlog__row:first-child { border-top: 1px solid var(--line); }
+.gitlog__row:hover { background: var(--surface); padding-left: 1rem; }
 
 .gitlog__hash { color: var(--amber); font-size: 0.85rem; }
 .gitlog__msg { font-size: 0.95rem; }
