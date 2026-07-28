@@ -1,5 +1,5 @@
 // ============================================
-// BOOT SEQUENCE
+// BOOT SEQUENCE (plays once per session)
 // ============================================
 (function boot() {
   const boot = document.getElementById("boot");
@@ -8,7 +8,14 @@
   const message = "php artisan portfolio:show mar-carlo";
   const prefersReduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-  if (prefersReduced) {
+  let alreadyBooted = false;
+  try {
+    alreadyBooted = sessionStorage.getItem("portfolioBooted") === "1";
+  } catch (err) {
+    // sessionStorage unavailable (e.g. privacy mode) — just play the animation
+  }
+
+  if (prefersReduced || alreadyBooted) {
     boot.classList.add("is-done");
     document.body.style.overflow = "";
     return;
@@ -31,6 +38,7 @@
   function finishBoot() {
     boot.classList.add("is-done");
     document.body.style.overflow = "";
+    try { sessionStorage.setItem("portfolioBooted", "1"); } catch (err) { /* noop */ }
   }
 
   setTimeout(typeChar, 300);
