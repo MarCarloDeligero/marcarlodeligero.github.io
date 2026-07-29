@@ -1,11 +1,9 @@
 // ============================================
-// BOOT SEQUENCE (plays once per session)
+// LOADING SCREEN (plays once per session)
 // ============================================
 (function boot() {
   const boot = document.getElementById("boot");
-  const typeTarget = document.getElementById("bootType");
   const fill = document.getElementById("bootFill");
-  const message = "php artisan portfolio:show mar-carlo";
   const prefersReduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
   let alreadyBooted = false;
@@ -22,18 +20,10 @@
   }
 
   document.body.style.overflow = "hidden";
-  let i = 0;
 
-  function typeChar() {
-    if (i < message.length) {
-      typeTarget.textContent += message[i];
-      i++;
-      setTimeout(typeChar, 28);
-    } else {
-      requestAnimationFrame(() => { fill.style.width = "100%"; });
-      setTimeout(finishBoot, 1500);
-    }
-  }
+  requestAnimationFrame(() => {
+    setTimeout(() => { fill.style.width = "100%"; }, 150);
+  });
 
   function finishBoot() {
     boot.classList.add("is-done");
@@ -41,10 +31,7 @@
     try { sessionStorage.setItem("portfolioBooted", "1"); } catch (err) { /* noop */ }
   }
 
-  setTimeout(typeChar, 300);
-
-  // safety net in case something stalls
-  setTimeout(finishBoot, 4500);
+  setTimeout(finishBoot, 1300);
 })();
 
 // ============================================
