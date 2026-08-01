@@ -7,22 +7,21 @@
       (function () {
         try {
           var saved = localStorage.getItem("theme");
-          var theme =
-            saved ||
-            (window.matchMedia("(prefers-color-scheme: dark)").matches
-              ? "dark"
-              : "light");
+          // Default to dark for first-time visitors (ignore OS preference);
+          // a returning visitor's explicit choice always wins.
+          var theme = saved || "dark";
           if (theme === "dark")
             document.documentElement.setAttribute("data-theme", "dark");
         } catch (e) {
-          /* localStorage unavailable — default to light */
+          // localStorage unavailable, still default to dark
+          document.documentElement.setAttribute("data-theme", "dark");
         }
       })();
     </script>
-    <title>Mar Carlo B. Deligero — Fullstack Developer</title>
+    <title>Mar Carlo B. Deligero, Fullstack Developer</title>
     <meta
       name="description"
-      content="Mar Carlo B. Deligero — Fullstack Developer working with PHP Laravel, Tailwind CSS, HTML and JavaScript."
+      content="Mar Carlo B. Deligero, Fullstack Developer working with PHP Laravel, Tailwind CSS, HTML and JavaScript."
     />
     <link rel="icon" href="favicon.svg" type="image/svg+xml" />
 
@@ -30,7 +29,7 @@
     <meta property="og:type" content="website" />
     <meta
       property="og:title"
-      content="Mar Carlo B. Deligero — Fullstack Developer"
+      content="Mar Carlo B. Deligero, Fullstack Developer"
     />
     <meta
       property="og:description"
@@ -51,10 +50,12 @@
     <!-- LOADING OVERLAY -->
     <div class="boot" id="boot">
       <div class="boot__inner">
-        <p class="boot__name">Mar Carlo</p>
-        <div class="boot__bar">
-          <div class="boot__bar-fill" id="bootFill"></div>
-        </div>
+        <p class="boot__name">
+          <span class="boot__name-outline">Mar_Carlo.Dev</span>
+          <span class="boot__name-fill" id="bootFill" aria-hidden="true"
+            >Mar_Carlo.Dev</span
+          >
+        </p>
       </div>
     </div>
 
@@ -73,7 +74,7 @@
           class="theme-toggle"
           id="themeToggle"
           aria-label="Toggle dark mode"
-          aria-pressed="false"
+          aria-pressed="true"
         >
           <svg
             class="theme-toggle__moon"
@@ -129,10 +130,10 @@
             <p class="eyebrow">Fullstack Developer</p>
             <h1 class="hero__title">Mar Carlo B. Deligero</h1>
             <p class="hero__desc">
-              I build complete web applications — PHP and Laravel on the
-              backend, HTML, CSS, Tailwind CSS and JavaScript on the frontend. I
-              like owning a feature from start to finish, from the database to
-              the screen.
+              I build complete web applications, PHP and Laravel on the backend,
+              HTML, CSS, Tailwind CSS and JavaScript on the frontend. I like
+              owning a feature from start to finish, from the database to the
+              screen.
             </p>
             <div class="hero__actions">
               <a href="#work" class="btn btn--primary">View work</a>
@@ -165,13 +166,13 @@
         <div class="about__grid">
           <div class="about__text reveal">
             <p>
-              I'm Mar Carlo — a fullstack developer who enjoys building things
+              I'm Mar Carlo, a fullstack developer who enjoys building things
               that work well on both ends. My backend of choice is
               <strong>PHP with Laravel</strong>: clean database structure,
               organized code, and features that hold up as a project grows.
             </p>
             <p>
-              On the frontend I keep it lean —
+              On the frontend I keep it lean,
               <strong>plain HTML &amp; CSS</strong> where it's enough,
               <strong>Tailwind CSS</strong> when a project needs to move fast,
               and <strong>JavaScript</strong> to make the interface feel
@@ -368,7 +369,7 @@
             </button>
             <p class="project__desc">
               A small REST API serving project and blog content to a Tailwind
-              frontend — built to practice clean Laravel API design and auth.
+              frontend, built to practice clean Laravel API design and auth.
             </p>
             <div class="project__tags">
               <span class="tag">Laravel</span>
@@ -421,7 +422,7 @@
           <div class="timeline__item">
             <span class="timeline__year">2022</span>
             <p class="timeline__msg">
-              Started with the fundamentals — HTML, CSS and JavaScript
+              Started with the fundamentals, HTML, CSS and JavaScript
             </p>
           </div>
         </div>
@@ -435,18 +436,25 @@
             <p>
               Got a project that needs a Laravel backend and a frontend that
               doesn't feel bolted on? I'm open to freelance work and fullstack
-              roles — email me directly.
+              roles, email me directly.
             </p>
             <div class="contact__socials">
-              <a href="mailto:marcarlodeligerob@gmail.com">Email</a>
-              <a href="#">GitHub</a>
-              <a href="#">LinkedIn</a>
+              <a
+                href="https://mail.google.com/mail/?view=cm&fs=1&to=marcarlodeligerob@gmail.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                >Email
+              </a>
             </div>
           </div>
 
           <div class="contact__email-card reveal reveal--delay">
             <p class="field__label">Email me at</p>
-            <a href="mailto:marcarlodeligerob@gmail.com" class="contact__email"
+            <a
+              href="https://mail.google.com/mail/?view=cm&fs=1&to=marcarlodeligerob@gmail.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="contact__email"
               >marcarlodeligerob@gmail.com</a
             >
             <button

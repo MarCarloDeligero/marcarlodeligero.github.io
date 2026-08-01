@@ -31,7 +31,7 @@
     try { sessionStorage.setItem("portfolioBooted", "1"); } catch (err) { /* noop */ }
   }
 
-  setTimeout(finishBoot, 1300);
+  setTimeout(finishBoot, 2350);
 })();
 
 // ============================================
@@ -88,7 +88,7 @@
 (function copyEmail() {
   const btn = document.getElementById("copyEmailBtn");
   const label = document.getElementById("copyEmailLabel");
-  const email = "deligero.c@yahoo.com";
+  const email = "marcarlodeligerob@gmail.com";
   if (!btn) return;
 
   btn.addEventListener("click", async () => {
@@ -169,6 +169,7 @@
     if (prevBtn) prevBtn.classList.toggle("is-hidden", currentIndex <= 0);
 
     const activeId = slides[currentIndex].id;
+    slides.forEach((s, i) => s.classList.toggle("is-active-slide", i === currentIndex));
     navLinks.forEach((a) => {
       a.classList.toggle("is-active", a.getAttribute("href") === "#" + activeId);
     });
