@@ -30,6 +30,7 @@
   --container: 1080px;
   --radius: 10px;
   --ease: cubic-bezier(0.16, 1, 0.3, 1);
+  --nav-h: 61px;
 }
 
 [data-theme="dark"] {
@@ -150,7 +151,7 @@ section {
 }
 .hero { border-top: none; }
 
-.section-head { margin-bottom: 3rem; }
+.section-head { margin-bottom: 2.2rem; }
 
 .eyebrow {
   display: block;
@@ -222,7 +223,9 @@ h2 {
   border-bottom: 1px solid transparent;
 }
 
-.nav__logo { font-weight: 700; font-size: 1.05rem; color: var(--text); }
+.nav__logo { position: relative; font-weight: 700; font-size: 1.05rem; color: var(--text); border-radius: 4px; }
+.nav__logo:focus { outline: none; }
+.nav__logo:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
 
 .nav__links { display: flex; gap: 1.8rem; }
 .nav__links a {
@@ -289,6 +292,7 @@ h2 {
   color: var(--text);
 }
 .nav__mobile.is-open { display: flex; }
+.nav__mobile a.is-active { color: var(--accent-dark); }
 
 /* ============================================
    HERO
@@ -616,6 +620,15 @@ h2 {
 
 .contact__email-card .btn { margin-top: 0.3rem; }
 
+.contact__credit {
+  display: none;
+  font-size: 0.82rem;
+  margin-top: 2.5rem;
+}
+@media (min-width: 901px) {
+  .contact__credit { display: block; }
+}
+
 /* ============================================
    FOOTER
 ============================================ */
@@ -631,6 +644,181 @@ h2 {
 }
 .footer__top { color: var(--text-muted); font-weight: 500; transition: color 0.2s var(--ease); }
 .footer__top:hover { color: var(--accent-dark); }
+
+/* ============================================
+   SLIDE NAV (prev/next, big-screen only)
+   Two edge-mounted circular arrows, vertically centered
+============================================ */
+.slide-nav { display: none; }
+
+.slide-nav__btn {
+  display: none; /* switched to flex at desktop breakpoint below */
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  flex-shrink: 0;
+  color: var(--text-muted);
+  background: var(--bg);
+  border: 1px solid var(--line-strong);
+  border-radius: 50%;
+  box-shadow: 0 10px 24px -14px var(--img-shadow);
+  transition: opacity 0.3s var(--ease), transform 0.2s var(--ease), color 0.2s var(--ease), border-color 0.2s var(--ease);
+}
+.slide-nav__btn span {
+  /* icon-only in the sidebar layout; aria-label on the button covers screen readers */
+  display: none;
+}
+.slide-nav__btn svg { width: 17px; height: 17px; }
+.slide-nav__btn:hover { color: var(--accent-dark); border-color: var(--accent-dark); }
+.slide-nav__btn:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+.slide-nav__btn.is-hidden { opacity: 0; pointer-events: none; }
+
+/* ============================================
+   SLIDE HINT (first-visit only, desktop only)
+============================================ */
+.slide-hint {
+  display: none;
+  position: fixed;
+  left: 50%;
+  bottom: 2rem;
+  transform: translateX(-50%) translateY(0);
+  z-index: 91;
+  align-items: center;
+  gap: 0.7rem;
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  color: var(--text);
+  background: var(--bg);
+  border: 1px solid var(--line-strong);
+  border-radius: 999px;
+  padding: 0.6em 0.6em 0.6em 1.1em;
+  box-shadow: 0 14px 30px -14px var(--img-shadow);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.4s var(--ease), transform 0.4s var(--ease), visibility 0.4s var(--ease);
+}
+.slide-hint kbd {
+  font-family: inherit;
+  font-size: 0.85em;
+  border: 1px solid var(--line-strong);
+  border-radius: 4px;
+  padding: 0.05em 0.4em;
+  margin: 0 0.05em;
+}
+.slide-hint__close {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 22px;
+  height: 22px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  border: none;
+  background: none;
+  color: var(--text-muted);
+  transition: background 0.2s var(--ease), color 0.2s var(--ease);
+}
+.slide-hint__close svg { width: 13px; height: 13px; }
+.slide-hint__close:hover { background: var(--bg-alt); color: var(--text); }
+.slide-hint__close:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+.slide-hint.is-visible {
+  display: flex;
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(-50%) translateY(0);
+}
+
+@media (min-width: 901px) {
+  .slide-nav__btn {
+    display: flex;
+    position: fixed;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 90;
+  }
+  #scrollPrev { left: 1.5rem; }
+  #scrollNext { right: 1.5rem; }
+  #scrollPrev:hover { transform: translateY(-50%) translateX(-2px); }
+  #scrollNext:hover { transform: translateY(-50%) translateX(2px); }
+  #scrollPrev.is-hidden { transform: translateY(-50%); }
+  #scrollNext.is-hidden { transform: translateY(-50%); }
+
+  /* No vertical scroll at all on desktop — horizontal slides only */
+  html, body { overflow: hidden; height: 100%; }
+  .footer { display: none; }
+
+  /* Horizontal slide paging: each top-level section is one full-width "slide" */
+  main#top {
+    display: flex;
+    height: calc(100vh - var(--nav-h));
+    overflow-x: auto;
+    overflow-y: hidden;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    scrollbar-width: none;
+  }
+  main#top::-webkit-scrollbar { display: none; }
+
+  main#top > section {
+    flex: 0 0 100vw;
+    max-width: 100vw;
+    height: calc(100vh - var(--nav-h));
+    margin: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+    padding-left: max(1.5rem, calc((100vw - var(--container)) / 2));
+    padding-right: max(1.5rem, calc((100vw - var(--container)) / 2));
+    overflow-y: auto;
+    scroll-snap-align: start;
+    border-top: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    scrollbar-width: none;
+  }
+  main#top > section::-webkit-scrollbar { display: none; }
+
+  main#top .hero { padding-top: 0; }
+  main#top .section-head { margin-bottom: 1.3rem; }
+  main#top .about__grid,
+  main#top .stack__grid,
+  main#top .contact__grid { gap: 2rem; }
+  main#top .timeline__item { padding: 0.6rem 0; }
+  main#top .contact__credit { margin-top: 1.5rem; }
+
+  /* Work: side-by-side cards instead of a stacked list, so 3 projects
+     fit one screen instead of needing a tall vertical scroll */
+  main#top .work__list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    align-items: start;
+  }
+  main#top .project {
+    margin: 0;
+    padding: 1.3rem;
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+  }
+  main#top .project__desc { max-width: none; }
+
+  /* Active-slide indicator in the nav */
+  .nav__links a { position: relative; }
+  .nav__links a.is-active { color: var(--text); }
+  .nav__links a.is-active::after,
+  .nav__logo.is-active::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -8px;
+    height: 2px;
+    background: var(--accent);
+    border-radius: 2px;
+  }
+}
 
 /* ============================================
    RESPONSIVE

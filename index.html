@@ -73,6 +73,7 @@
           class="theme-toggle"
           id="themeToggle"
           aria-label="Toggle dark mode"
+          aria-pressed="false"
         >
           <svg
             class="theme-toggle__moon"
@@ -100,7 +101,7 @@
             />
           </svg>
         </button>
-        <a href="#contact" class="nav__cta">Contact</a>
+        <!-- <a href="#contact" class="nav__cta">Contact</a> -->
         <button
           class="nav__burger"
           id="burger"
@@ -122,7 +123,7 @@
 
     <main id="top">
       <!-- HERO -->
-      <section class="hero">
+      <section class="hero" id="hero">
         <div class="hero__grid">
           <div class="hero__copy reveal">
             <p class="eyebrow">Fullstack Developer</p>
@@ -158,7 +159,6 @@
       <!-- ABOUT -->
       <section class="about" id="about">
         <div class="section-head reveal">
-          <span class="eyebrow">About</span>
           <h2>A bit about me</h2>
         </div>
 
@@ -209,7 +209,6 @@
       <!-- SKILLS -->
       <section class="stack" id="stack">
         <div class="section-head reveal">
-          <span class="eyebrow">Skills</span>
           <h2>What I work with</h2>
         </div>
 
@@ -250,7 +249,6 @@
       <!-- WORK -->
       <section class="work" id="work">
         <div class="section-head reveal">
-          <span class="eyebrow">Work</span>
           <h2>Selected projects</h2>
         </div>
 
@@ -398,7 +396,6 @@
       <!-- EXPERIENCE -->
       <section class="experience" id="experience">
         <div class="section-head reveal">
-          <span class="eyebrow">Experience</span>
           <h2>My journey so far</h2>
         </div>
 
@@ -434,7 +431,6 @@
       <section class="contact" id="contact">
         <div class="contact__grid">
           <div class="contact__copy reveal">
-            <span class="eyebrow">Contact</span>
             <h2>Get in touch</h2>
             <p>
               Got a project that needs a Laravel backend and a frontend that
@@ -442,7 +438,7 @@
               roles — email me directly.
             </p>
             <div class="contact__socials">
-              <a href="mailto:marcarlodeligerob@gmail.com">Email</a>
+              <a href="mailto:deligero.c@yahoo.com">Email</a>
               <a href="#">GitHub</a>
               <a href="#">LinkedIn</a>
             </div>
@@ -450,8 +446,8 @@
 
           <div class="contact__email-card reveal reveal--delay">
             <p class="field__label">Email me at</p>
-            <a href="mailto:marcarlodeligerob@gmail.com" class="contact__email"
-              >marcarlodeligerob@gmail.com</a
+            <a href="mailto:deligero.c@yahoo.com" class="contact__email"
+              >deligero.c@yahoo.com</a
             >
             <button
               class="btn btn--ghost btn--full"
@@ -462,13 +458,81 @@
             </button>
           </div>
         </div>
+        <p class="muted contact__credit">
+          © <span class="js-year">2026</span> Mar Carlo B. Deligero
+        </p>
       </section>
     </main>
 
     <footer class="footer">
-      <p class="muted">© <span id="year"></span> Mar Carlo B. Deligero</p>
+      <p class="muted">
+        © <span class="js-year">2026</span> Mar Carlo B. Deligero
+      </p>
       <a href="#top" class="footer__top">Back to top</a>
     </footer>
+
+    <div class="slide-nav" id="slideNav">
+      <button
+        class="slide-nav__btn"
+        id="scrollPrev"
+        type="button"
+        aria-label="Previous section"
+      >
+        <svg
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <path d="M15 18l-6-6 6-6" />
+        </svg>
+        <span>prev</span>
+      </button>
+      <button
+        class="slide-nav__btn"
+        id="scrollNext"
+        type="button"
+        aria-label="Next section"
+      >
+        <span>next</span>
+        <svg
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <path d="M9 18l6-6-6-6" />
+        </svg>
+      </button>
+    </div>
+
+    <div class="slide-hint" id="slideHint" role="status">
+      <span
+        >Scroll, use <kbd>←</kbd> <kbd>→</kbd>, or the side arrows to
+        browse</span
+      >
+      <button
+        class="slide-hint__close"
+        id="slideHintClose"
+        type="button"
+        aria-label="Dismiss hint"
+      >
+        <svg
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <path d="M18 6L6 18M6 6l12 12" />
+        </svg>
+      </button>
+    </div>
 
     <script src="script.js"></script>
   </body>
