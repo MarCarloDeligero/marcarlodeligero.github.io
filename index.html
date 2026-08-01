@@ -1,332 +1,475 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Mar Carlo B. Deligero — Fullstack Developer</title>
-<meta name="description" content="Mar Carlo B. Deligero — Fullstack Developer working with PHP Laravel, Tailwind CSS, HTML and JavaScript.">
-<link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script>
+      (function () {
+        try {
+          var saved = localStorage.getItem("theme");
+          var theme =
+            saved ||
+            (window.matchMedia("(prefers-color-scheme: dark)").matches
+              ? "dark"
+              : "light");
+          if (theme === "dark")
+            document.documentElement.setAttribute("data-theme", "dark");
+        } catch (e) {
+          /* localStorage unavailable — default to light */
+        }
+      })();
+    </script>
+    <title>Mar Carlo B. Deligero — Fullstack Developer</title>
+    <meta
+      name="description"
+      content="Mar Carlo B. Deligero — Fullstack Developer working with PHP Laravel, Tailwind CSS, HTML and JavaScript."
+    />
+    <link rel="icon" href="favicon.svg" type="image/svg+xml" />
 
-<!-- Open Graph -->
-<meta property="og:type" content="website">
-<meta property="og:title" content="Mar Carlo B. Deligero — Fullstack Developer">
-<meta property="og:description" content="Laravel backend, Tailwind CSS and JavaScript frontend. View my work and get in touch.">
-<meta property="og:image" content="images/mar-carlo.jpg">
-<meta property="og:url" content="https://marcarlo.dev">
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:title"
+      content="Mar Carlo B. Deligero — Fullstack Developer"
+    />
+    <meta
+      property="og:description"
+      content="Laravel backend, Tailwind CSS and JavaScript frontend. View my work and get in touch."
+    />
+    <meta property="og:image" content="images/mar-carlo.jpg" />
+    <meta property="og:url" content="https://marcarlo.dev" />
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
-</head>
-<body>
-
-<!-- LOADING OVERLAY -->
-<div class="boot" id="boot">
-  <div class="boot__inner">
-    <p class="boot__name">Mar Carlo</p>
-    <div class="boot__bar"><div class="boot__bar-fill" id="bootFill"></div></div>
-  </div>
-</div>
-
-<!-- NAV -->
-<header class="nav" id="nav">
-  <a href="#top" class="nav__logo">Mar Carlo</a>
-  <nav class="nav__links">
-    <a href="#about">About</a>
-    <a href="#stack">Skills</a>
-    <a href="#work">Work</a>
-    <a href="#experience">Experience</a>
-    <a href="#contact">Contact</a>
-  </nav>
-  <a href="#contact" class="nav__cta">Contact</a>
-  <button class="nav__burger" id="burger" aria-label="Open menu" aria-expanded="false">
-    <span></span><span></span><span></span>
-  </button>
-</header>
-
-<div class="nav__mobile" id="navMobile">
-  <a href="#about">About</a>
-  <a href="#stack">Skills</a>
-  <a href="#work">Work</a>
-  <a href="#experience">Experience</a>
-  <a href="#contact">Contact</a>
-</div>
-
-<main id="top">
-
-  <!-- HERO -->
-  <section class="hero">
-    <div class="hero__grid">
-      <div class="hero__copy reveal">
-        <p class="eyebrow">Fullstack Developer</p>
-        <h1 class="hero__title">Mar Carlo B. Deligero</h1>
-        <p class="hero__desc">
-          I build complete web applications — PHP and Laravel on the backend,
-          HTML, CSS, Tailwind CSS and JavaScript on the frontend. I like
-          owning a feature from start to finish, from the database to the
-          screen.
-        </p>
-        <div class="hero__actions">
-          <a href="#work" class="btn btn--primary">View work</a>
-          <a href="#contact" class="btn btn--ghost">Contact me</a>
-        </div>
-        <a href="resume.pdf" class="resume-link" download>Download résumé</a>
-      </div>
-
-      <div class="hero__photo reveal reveal--delay">
-        <img src="images/mar-carlo.jpg" alt="Mar Carlo B. Deligero" class="hero__img">
-      </div>
-    </div>
-  </section>
-
-  <!-- ABOUT -->
-  <section class="about" id="about">
-    <div class="section-head reveal">
-      <span class="eyebrow">About</span>
-      <h2>A bit about me</h2>
-    </div>
-
-    <div class="about__grid">
-      <div class="about__text reveal">
-        <p>
-          I'm Mar Carlo — a fullstack developer who enjoys building things
-          that work well on both ends. My backend of choice is
-          <strong>PHP with Laravel</strong>: clean database structure,
-          organized code, and features that hold up as a project grows.
-        </p>
-        <p>
-          On the frontend I keep it lean — <strong>plain HTML &amp; CSS</strong>
-          where it's enough, <strong>Tailwind CSS</strong> when a project needs
-          to move fast, and <strong>JavaScript</strong> to make the interface
-          feel responsive and alive.
-        </p>
-      </div>
-
-      <div class="facts reveal reveal--delay">
-        <div class="facts__row">
-          <span class="facts__label">Role</span>
-          <span class="facts__value">Fullstack Developer</span>
-        </div>
-        <div class="facts__row">
-          <span class="facts__label">Backend</span>
-          <span class="facts__value">PHP, Laravel</span>
-        </div>
-        <div class="facts__row">
-          <span class="facts__label">Frontend</span>
-          <span class="facts__value">HTML, CSS, Tailwind, JavaScript</span>
-        </div>
-        <div class="facts__row">
-          <span class="facts__label">Based in</span>
-          <span class="facts__value">Philippines</span>
-        </div>
-        <div class="facts__row">
-          <span class="facts__label">Availability</span>
-          <span class="facts__value facts__value--accent">Open to work</span>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- LOADING OVERLAY -->
+    <div class="boot" id="boot">
+      <div class="boot__inner">
+        <p class="boot__name">Mar Carlo</p>
+        <div class="boot__bar">
+          <div class="boot__bar-fill" id="bootFill"></div>
         </div>
       </div>
     </div>
-  </section>
 
-  <!-- SKILLS -->
-  <section class="stack" id="stack">
-    <div class="section-head reveal">
-      <span class="eyebrow">Skills</span>
-      <h2>What I work with</h2>
-    </div>
-
-    <div class="stack__grid">
-      <div class="stack__col reveal">
-        <h3 class="stack__label">Backend</h3>
-        <ul class="stack__list">
-          <li>PHP</li>
-          <li>Laravel</li>
-          <li>Eloquent ORM</li>
-          <li>MySQL</li>
-          <li>REST APIs</li>
-        </ul>
-      </div>
-      <div class="stack__col reveal reveal--delay">
-        <h3 class="stack__label">Frontend</h3>
-        <ul class="stack__list">
-          <li>HTML5</li>
-          <li>CSS3</li>
-          <li>Tailwind CSS</li>
-          <li>JavaScript</li>
-          <li>Responsive Design</li>
-        </ul>
-      </div>
-      <div class="stack__col reveal reveal--delay2">
-        <h3 class="stack__label">Tools</h3>
-        <ul class="stack__list">
-          <li>Git &amp; GitHub</li>
-          <li>Composer</li>
-          <li>Postman</li>
-          <li>VS Code</li>
-          <li>NPM</li>
-        </ul>
-      </div>
-    </div>
-  </section>
-
-  <!-- WORK -->
-  <section class="work" id="work">
-    <div class="section-head reveal">
-      <span class="eyebrow">Work</span>
-      <h2>Selected projects</h2>
-    </div>
-
-    <div class="work__list">
-
-      <article class="project reveal">
-        <button class="project__toggle" aria-expanded="false" aria-controls="proj1">
-          <h3>Inventory &amp; Sales System</h3>
-          <span class="project__icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
-          </span>
+    <!-- NAV -->
+    <header class="nav" id="nav">
+      <a href="#top" class="nav__logo">Mar Carlo</a>
+      <nav class="nav__links">
+        <a href="#about">About</a>
+        <a href="#stack">Skills</a>
+        <a href="#work">Work</a>
+        <a href="#experience">Experience</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <div class="nav__right">
+        <button
+          class="theme-toggle"
+          id="themeToggle"
+          aria-label="Toggle dark mode"
+        >
+          <svg
+            class="theme-toggle__moon"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
+          </svg>
+          <svg
+            class="theme-toggle__sun"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <circle cx="12" cy="12" r="4" />
+            <path
+              d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"
+            />
+          </svg>
         </button>
-        <p class="project__desc">
-          A Laravel-powered inventory manager with real-time stock tracking,
-          low-stock alerts, and a Tailwind dashboard for daily sales reporting.
-        </p>
-        <div class="project__tags">
-          <span class="tag">Laravel</span>
-          <span class="tag">MySQL</span>
-          <span class="tag">Tailwind CSS</span>
+        <a href="#contact" class="nav__cta">Contact</a>
+        <button
+          class="nav__burger"
+          id="burger"
+          aria-label="Open menu"
+          aria-expanded="false"
+        >
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </header>
+
+    <div class="nav__mobile" id="navMobile">
+      <a href="#about">About</a>
+      <a href="#stack">Skills</a>
+      <a href="#work">Work</a>
+      <a href="#experience">Experience</a>
+      <a href="#contact">Contact</a>
+    </div>
+
+    <main id="top">
+      <!-- HERO -->
+      <section class="hero">
+        <div class="hero__grid">
+          <div class="hero__copy reveal">
+            <p class="eyebrow">Fullstack Developer</p>
+            <h1 class="hero__title">Mar Carlo B. Deligero</h1>
+            <p class="hero__desc">
+              I build complete web applications — PHP and Laravel on the
+              backend, HTML, CSS, Tailwind CSS and JavaScript on the frontend. I
+              like owning a feature from start to finish, from the database to
+              the screen.
+            </p>
+            <div class="hero__actions">
+              <a href="#work" class="btn btn--primary">View work</a>
+              <a href="#contact" class="btn btn--ghost">Contact me</a>
+            </div>
+            <a href="resume.pdf" class="resume-link" download
+              >Download résumé</a
+            >
+          </div>
+
+          <div class="hero__photo reveal reveal--delay">
+            <img
+              src="images/mar-carlo-cutout.png"
+              alt="Mar Carlo B. Deligero"
+              class="hero__img"
+            />
+            <span class="hero__tag"
+              ><span class="hero__tag-dot"></span>open to work</span
+            >
+          </div>
         </div>
-        <div class="project__details" id="proj1">
-          <div class="project__details-inner">
-            <p class="project__details-label">Highlights</p>
-            <ul class="project__features">
-              <li>Real-time stock levels that update automatically as items sell</li>
-              <li>Low-stock threshold alerts so restocking never gets missed</li>
-              <li>Sales reports broken down by day, week, and month</li>
+      </section>
+
+      <!-- ABOUT -->
+      <section class="about" id="about">
+        <div class="section-head reveal">
+          <span class="eyebrow">About</span>
+          <h2>A bit about me</h2>
+        </div>
+
+        <div class="about__grid">
+          <div class="about__text reveal">
+            <p>
+              I'm Mar Carlo — a fullstack developer who enjoys building things
+              that work well on both ends. My backend of choice is
+              <strong>PHP with Laravel</strong>: clean database structure,
+              organized code, and features that hold up as a project grows.
+            </p>
+            <p>
+              On the frontend I keep it lean —
+              <strong>plain HTML &amp; CSS</strong> where it's enough,
+              <strong>Tailwind CSS</strong> when a project needs to move fast,
+              and <strong>JavaScript</strong> to make the interface feel
+              responsive and alive.
+            </p>
+          </div>
+
+          <div class="facts reveal reveal--delay">
+            <div class="facts__row">
+              <span class="facts__label">Role</span>
+              <span class="facts__value">Fullstack Developer</span>
+            </div>
+            <div class="facts__row">
+              <span class="facts__label">Backend</span>
+              <span class="facts__value">PHP, Laravel</span>
+            </div>
+            <div class="facts__row">
+              <span class="facts__label">Frontend</span>
+              <span class="facts__value">HTML, CSS, Tailwind, JavaScript</span>
+            </div>
+            <div class="facts__row">
+              <span class="facts__label">Based in</span>
+              <span class="facts__value">Philippines</span>
+            </div>
+            <div class="facts__row">
+              <span class="facts__label">Availability</span>
+              <span class="facts__value facts__value--accent"
+                >Open to work</span
+              >
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SKILLS -->
+      <section class="stack" id="stack">
+        <div class="section-head reveal">
+          <span class="eyebrow">Skills</span>
+          <h2>What I work with</h2>
+        </div>
+
+        <div class="stack__grid">
+          <div class="stack__col reveal">
+            <h3 class="stack__label">Backend</h3>
+            <ul class="stack__list">
+              <li>PHP</li>
+              <li>Laravel</li>
+              <li>Eloquent ORM</li>
+              <li>MySQL</li>
+              <li>REST APIs</li>
+            </ul>
+          </div>
+          <div class="stack__col reveal reveal--delay">
+            <h3 class="stack__label">Frontend</h3>
+            <ul class="stack__list">
+              <li>HTML5</li>
+              <li>CSS3</li>
+              <li>Tailwind CSS</li>
+              <li>JavaScript</li>
+              <li>Responsive Design</li>
+            </ul>
+          </div>
+          <div class="stack__col reveal reveal--delay2">
+            <h3 class="stack__label">Tools</h3>
+            <ul class="stack__list">
+              <li>Git &amp; GitHub</li>
+              <li>Composer</li>
+              <li>Postman</li>
+              <li>VS Code</li>
+              <li>NPM</li>
             </ul>
           </div>
         </div>
-      </article>
+      </section>
 
-      <article class="project reveal reveal--delay">
-        <button class="project__toggle" aria-expanded="false" aria-controls="proj2">
-          <h3>Client Booking Platform</h3>
-          <span class="project__icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
-          </span>
-        </button>
-        <p class="project__desc">
-          An appointment booking app built on Laravel with form validation
-          and a JavaScript-driven calendar for scheduling slots.
-        </p>
-        <div class="project__tags">
-          <span class="tag">Laravel</span>
-          <span class="tag">JavaScript</span>
-          <span class="tag">MySQL</span>
+      <!-- WORK -->
+      <section class="work" id="work">
+        <div class="section-head reveal">
+          <span class="eyebrow">Work</span>
+          <h2>Selected projects</h2>
         </div>
-        <div class="project__details" id="proj2">
-          <div class="project__details-inner">
-            <p class="project__details-label">Highlights</p>
-            <ul class="project__features">
-              <li>Visual calendar showing open and booked time slots</li>
-              <li>Automatic conflict checks so double-bookings can't happen</li>
-              <li>Form validation that catches missing or invalid details early</li>
-            </ul>
+
+        <div class="work__list">
+          <article class="project reveal">
+            <button
+              class="project__toggle"
+              aria-expanded="false"
+              aria-controls="proj1"
+            >
+              <h3>Inventory &amp; Sales System</h3>
+              <span class="project__icon">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path d="M6 9l6 6 6-6" />
+                </svg>
+              </span>
+            </button>
+            <p class="project__desc">
+              A Laravel-powered inventory manager with real-time stock tracking,
+              low-stock alerts, and a Tailwind dashboard for daily sales
+              reporting.
+            </p>
+            <div class="project__tags">
+              <span class="tag">Laravel</span>
+              <span class="tag">MySQL</span>
+              <span class="tag">Tailwind CSS</span>
+            </div>
+            <div class="project__details" id="proj1">
+              <div class="project__details-inner">
+                <p class="project__details-label">Highlights</p>
+                <ul class="project__features">
+                  <li>
+                    Real-time stock levels that update automatically as items
+                    sell
+                  </li>
+                  <li>
+                    Low-stock threshold alerts so restocking never gets missed
+                  </li>
+                  <li>Sales reports broken down by day, week, and month</li>
+                </ul>
+              </div>
+            </div>
+          </article>
+
+          <article class="project reveal reveal--delay">
+            <button
+              class="project__toggle"
+              aria-expanded="false"
+              aria-controls="proj2"
+            >
+              <h3>Client Booking Platform</h3>
+              <span class="project__icon">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path d="M6 9l6 6 6-6" />
+                </svg>
+              </span>
+            </button>
+            <p class="project__desc">
+              An appointment booking app built on Laravel with form validation
+              and a JavaScript-driven calendar for scheduling slots.
+            </p>
+            <div class="project__tags">
+              <span class="tag">Laravel</span>
+              <span class="tag">JavaScript</span>
+              <span class="tag">MySQL</span>
+            </div>
+            <div class="project__details" id="proj2">
+              <div class="project__details-inner">
+                <p class="project__details-label">Highlights</p>
+                <ul class="project__features">
+                  <li>Visual calendar showing open and booked time slots</li>
+                  <li>
+                    Automatic conflict checks so double-bookings can't happen
+                  </li>
+                  <li>
+                    Form validation that catches missing or invalid details
+                    early
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </article>
+
+          <article class="project reveal reveal--delay2">
+            <button
+              class="project__toggle"
+              aria-expanded="false"
+              aria-controls="proj3"
+            >
+              <h3>Portfolio API</h3>
+              <span class="project__icon">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path d="M6 9l6 6 6-6" />
+                </svg>
+              </span>
+            </button>
+            <p class="project__desc">
+              A small REST API serving project and blog content to a Tailwind
+              frontend — built to practice clean Laravel API design and auth.
+            </p>
+            <div class="project__tags">
+              <span class="tag">Laravel</span>
+              <span class="tag">REST API</span>
+              <span class="tag">HTML/CSS</span>
+            </div>
+            <div class="project__details" id="proj3">
+              <div class="project__details-inner">
+                <p class="project__details-label">Highlights</p>
+                <ul class="project__features">
+                  <li>
+                    Clean REST endpoints for projects, posts, and profile data
+                  </li>
+                  <li>Token-based authentication for protected routes</li>
+                  <li>
+                    Structured JSON responses ready to plug into any frontend
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- EXPERIENCE -->
+      <section class="experience" id="experience">
+        <div class="section-head reveal">
+          <span class="eyebrow">Experience</span>
+          <h2>My journey so far</h2>
+        </div>
+
+        <div class="timeline reveal">
+          <div class="timeline__item">
+            <span class="timeline__year">Present</span>
+            <p class="timeline__msg">
+              Building fullstack apps with Laravel and Tailwind CSS
+            </p>
+          </div>
+          <div class="timeline__item">
+            <span class="timeline__year">2024</span>
+            <p class="timeline__msg">
+              Shipped my first client project end-to-end, backend and frontend
+            </p>
+          </div>
+          <div class="timeline__item">
+            <span class="timeline__year">2023</span>
+            <p class="timeline__msg">
+              Learned Laravel, database design, and building REST APIs
+            </p>
+          </div>
+          <div class="timeline__item">
+            <span class="timeline__year">2022</span>
+            <p class="timeline__msg">
+              Started with the fundamentals — HTML, CSS and JavaScript
+            </p>
           </div>
         </div>
-      </article>
+      </section>
 
-      <article class="project reveal reveal--delay2">
-        <button class="project__toggle" aria-expanded="false" aria-controls="proj3">
-          <h3>Portfolio API</h3>
-          <span class="project__icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
-          </span>
-        </button>
-        <p class="project__desc">
-          A small REST API serving project and blog content to a Tailwind
-          frontend — built to practice clean Laravel API design and auth.
-        </p>
-        <div class="project__tags">
-          <span class="tag">Laravel</span>
-          <span class="tag">REST API</span>
-          <span class="tag">HTML/CSS</span>
-        </div>
-        <div class="project__details" id="proj3">
-          <div class="project__details-inner">
-            <p class="project__details-label">Highlights</p>
-            <ul class="project__features">
-              <li>Clean REST endpoints for projects, posts, and profile data</li>
-              <li>Token-based authentication for protected routes</li>
-              <li>Structured JSON responses ready to plug into any frontend</li>
-            </ul>
+      <!-- CONTACT -->
+      <section class="contact" id="contact">
+        <div class="contact__grid">
+          <div class="contact__copy reveal">
+            <span class="eyebrow">Contact</span>
+            <h2>Get in touch</h2>
+            <p>
+              Got a project that needs a Laravel backend and a frontend that
+              doesn't feel bolted on? I'm open to freelance work and fullstack
+              roles — email me directly.
+            </p>
+            <div class="contact__socials">
+              <a href="mailto:marcarlodeligerob@gmail.com">Email</a>
+              <a href="#">GitHub</a>
+              <a href="#">LinkedIn</a>
+            </div>
+          </div>
+
+          <div class="contact__email-card reveal reveal--delay">
+            <p class="field__label">Email me at</p>
+            <a href="mailto:marcarlodeligerob@gmail.com" class="contact__email"
+              >marcarlodeligerob@gmail.com</a
+            >
+            <button
+              class="btn btn--ghost btn--full"
+              id="copyEmailBtn"
+              type="button"
+            >
+              <span id="copyEmailLabel">Copy email</span>
+            </button>
           </div>
         </div>
-      </article>
+      </section>
+    </main>
 
-    </div>
-  </section>
+    <footer class="footer">
+      <p class="muted">© <span id="year"></span> Mar Carlo B. Deligero</p>
+      <a href="#top" class="footer__top">Back to top</a>
+    </footer>
 
-  <!-- EXPERIENCE -->
-  <section class="experience" id="experience">
-    <div class="section-head reveal">
-      <span class="eyebrow">Experience</span>
-      <h2>My journey so far</h2>
-    </div>
-
-    <div class="timeline reveal">
-      <div class="timeline__item">
-        <span class="timeline__year">Present</span>
-        <p class="timeline__msg">Building fullstack apps with Laravel and Tailwind CSS</p>
-      </div>
-      <div class="timeline__item">
-        <span class="timeline__year">2024</span>
-        <p class="timeline__msg">Shipped my first client project end-to-end, backend and frontend</p>
-      </div>
-      <div class="timeline__item">
-        <span class="timeline__year">2023</span>
-        <p class="timeline__msg">Learned Laravel, database design, and building REST APIs</p>
-      </div>
-      <div class="timeline__item">
-        <span class="timeline__year">2022</span>
-        <p class="timeline__msg">Started with the fundamentals — HTML, CSS and JavaScript</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- CONTACT -->
-  <section class="contact" id="contact">
-    <div class="contact__grid">
-      <div class="contact__copy reveal">
-        <span class="eyebrow">Contact</span>
-        <h2>Get in touch</h2>
-        <p>
-          Got a project that needs a Laravel backend and a frontend that
-          doesn't feel bolted on? I'm open to freelance work and fullstack
-          roles — email me directly.
-        </p>
-        <div class="contact__socials">
-          <a href="mailto:marcarlodeligerob@gmail.com">Email</a>
-          <a href="#">GitHub</a>
-          <a href="#">LinkedIn</a>
-        </div>
-      </div>
-
-      <div class="contact__email-card reveal reveal--delay">
-        <p class="field__label">Email me at</p>
-        <a href="mailto:marcarlodeligerob@gmail.com" class="contact__email">marcarlodeligerob@gmail.com</a>
-        <button class="btn btn--ghost btn--full" id="copyEmailBtn" type="button">
-          <span id="copyEmailLabel">Copy email</span>
-        </button>
-      </div>
-    </div>
-  </section>
-
-</main>
-
-<footer class="footer">
-  <p class="muted">© <span id="year"></span> Mar Carlo B. Deligero</p>
-  <a href="#top" class="footer__top">Back to top</a>
-</footer>
-
-<script src="script.js"></script>
-</body>
+    <script src="script.js"></script>
+  </body>
 </html>
