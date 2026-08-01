@@ -103,6 +103,21 @@
 })();
 
 // ============================================
+// PROJECT ACCORDION
+// ============================================
+(function projectAccordion() {
+  const toggles = document.querySelectorAll(".project__toggle");
+
+  toggles.forEach((btn) => {
+    btn.addEventListener("click", () => {
+      const project = btn.closest(".project");
+      const isOpen = project.classList.toggle("is-open");
+      btn.setAttribute("aria-expanded", String(isOpen));
+    });
+  });
+})();
+
+// ============================================
 // FOOTER YEAR
 // ============================================
 document.getElementById("year").textContent = new Date().getFullYear();
