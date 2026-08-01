@@ -351,43 +351,82 @@ h2 {
 }
 
 .project {
-  padding: 2rem 0;
+  padding: 1.6rem 0;
   border-bottom: 1px solid var(--line);
 }
 .project:first-child { padding-top: 0; }
 .project:last-child { border-bottom: none; }
 
-.project__head {
+.project__toggle {
+  width: 100%;
   display: flex;
-  align-items: baseline;
+  align-items: center;
   justify-content: space-between;
   gap: 1rem;
-  margin-bottom: 0.7rem;
-  flex-wrap: wrap;
+  background: none;
+  border: none;
+  padding: 0;
+  text-align: left;
+  color: var(--text);
 }
 .project h3 { font-size: 1.1rem; font-weight: 600; }
 
-.project__links { display: flex; gap: 1rem; flex-shrink: 0; }
-.project__link {
-  font-size: 0.85rem;
-  font-weight: 600;
-  color: var(--accent);
-  border-bottom: 1px solid transparent;
-  transition: border-color 0.2s var(--ease);
+.project__icon {
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 26px;
+  height: 26px;
+  color: var(--text-muted);
+  transition: transform 0.3s var(--ease), color 0.2s var(--ease);
 }
-.project__link:hover { border-color: var(--accent); }
+.project__icon svg { width: 18px; height: 18px; }
+.project__toggle:hover .project__icon { color: var(--accent); }
+.project.is-open .project__icon { transform: rotate(180deg); color: var(--accent); }
 
 .project__desc {
   color: var(--text-muted);
   font-size: 0.94rem;
   max-width: 68ch;
-  margin-bottom: 1rem;
+  margin: 0.8rem 0 1rem;
 }
 
-.work__note {
-  margin-top: 1.5rem;
-  font-size: 0.85rem;
+.project__details {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.35s var(--ease);
+}
+.project.is-open .project__details { grid-template-rows: 1fr; }
+
+.project__details-inner { overflow: hidden; }
+
+.project__details-label {
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-top: 1.2rem;
+  margin-bottom: 0.7rem;
+}
+
+.project__features li {
+  position: relative;
+  padding-left: 1.1rem;
+  font-size: 0.92rem;
   color: var(--text-muted);
+  margin-bottom: 0.5rem;
+}
+.project__features li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.55em;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--accent);
 }
 
 /* ============================================
