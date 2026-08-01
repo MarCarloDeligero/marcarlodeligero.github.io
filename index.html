@@ -179,13 +179,12 @@
     <div class="work__list">
 
       <article class="project reveal">
-        <div class="project__head">
+        <button class="project__toggle" aria-expanded="false" aria-controls="proj1">
           <h3>Inventory &amp; Sales System</h3>
-          <div class="project__links">
-            <a href="#" class="project__link">Live demo</a>
-            <a href="#" class="project__link">Source</a>
-          </div>
-        </div>
+          <span class="project__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
+          </span>
+        </button>
         <p class="project__desc">
           A Laravel-powered inventory manager with real-time stock tracking,
           low-stock alerts, and a Tailwind dashboard for daily sales reporting.
@@ -195,16 +194,25 @@
           <span class="tag">MySQL</span>
           <span class="tag">Tailwind CSS</span>
         </div>
+        <div class="project__details" id="proj1">
+          <div class="project__details-inner">
+            <p class="project__details-label">Highlights</p>
+            <ul class="project__features">
+              <li>Real-time stock levels that update automatically as items sell</li>
+              <li>Low-stock threshold alerts so restocking never gets missed</li>
+              <li>Sales reports broken down by day, week, and month</li>
+            </ul>
+          </div>
+        </div>
       </article>
 
       <article class="project reveal reveal--delay">
-        <div class="project__head">
+        <button class="project__toggle" aria-expanded="false" aria-controls="proj2">
           <h3>Client Booking Platform</h3>
-          <div class="project__links">
-            <a href="#" class="project__link">Live demo</a>
-            <a href="#" class="project__link">Source</a>
-          </div>
-        </div>
+          <span class="project__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
+          </span>
+        </button>
         <p class="project__desc">
           An appointment booking app built on Laravel with form validation
           and a JavaScript-driven calendar for scheduling slots.
@@ -214,16 +222,25 @@
           <span class="tag">JavaScript</span>
           <span class="tag">MySQL</span>
         </div>
+        <div class="project__details" id="proj2">
+          <div class="project__details-inner">
+            <p class="project__details-label">Highlights</p>
+            <ul class="project__features">
+              <li>Visual calendar showing open and booked time slots</li>
+              <li>Automatic conflict checks so double-bookings can't happen</li>
+              <li>Form validation that catches missing or invalid details early</li>
+            </ul>
+          </div>
+        </div>
       </article>
 
       <article class="project reveal reveal--delay2">
-        <div class="project__head">
+        <button class="project__toggle" aria-expanded="false" aria-controls="proj3">
           <h3>Portfolio API</h3>
-          <div class="project__links">
-            <a href="#" class="project__link">Live demo</a>
-            <a href="#" class="project__link">Source</a>
-          </div>
-        </div>
+          <span class="project__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
+          </span>
+        </button>
         <p class="project__desc">
           A small REST API serving project and blog content to a Tailwind
           frontend — built to practice clean Laravel API design and auth.
@@ -233,10 +250,19 @@
           <span class="tag">REST API</span>
           <span class="tag">HTML/CSS</span>
         </div>
+        <div class="project__details" id="proj3">
+          <div class="project__details-inner">
+            <p class="project__details-label">Highlights</p>
+            <ul class="project__features">
+              <li>Clean REST endpoints for projects, posts, and profile data</li>
+              <li>Token-based authentication for protected routes</li>
+              <li>Structured JSON responses ready to plug into any frontend</li>
+            </ul>
+          </div>
+        </div>
       </article>
 
     </div>
-    <p class="work__note">These will link to live projects and repositories once published.</p>
   </section>
 
   <!-- EXPERIENCE -->
